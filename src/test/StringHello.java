@@ -1,7 +1,15 @@
 package test;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.Reader;
 
 public class StringHello{
+	private String point;
 	public static void main(String[] args) {
 		String s1="hello";
   	  if(s1=="hello") {
@@ -25,11 +33,32 @@ public class StringHello{
   	  
   	  String foo="blue";
   	  Boolean [] bar= new Boolean[1];
-  	  if(bar[0]) {
+  	  if(bar[0]=true) {
   		  foo="green";
   	  }
   	  System.out.println(foo);
+      File file = new File("/Users/abocide/Documents/卢俊杰.txt");
+      FileInputStream fileInputStream;
+	try {
+		fileInputStream = new FileInputStream(file);
+		InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream);
+	  	BufferedReader bufferedReader= new BufferedReader(inputStreamReader);
+	  	String strr=null;
+	  	try {
+			while((strr=bufferedReader.readLine())!=null) {
+				System.out.println(strr);
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	} catch (FileNotFoundException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
 	}
+     
+	
+	 }
 	public static  void exchagne (int i ,int j) {
 		int tmp=0;
 		tmp=i;
